@@ -1,99 +1,7 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 @import 'variable.scss';
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  font-size: 16px;
-  font-family: 'Lato', sans-serif;
-  color: $text-color;
-  line-height: 1.6;
-}
-
-a {
-  text-decoration: none;
-  color: $text-color;
-}
-
-h1,
-h2 {
-  font-weight: 300;
-  line-height: 1.2;
-  margin: 10px 0;
-}
-
-p {
-  margin: 10px 0;
-}
-
-ul {
-  list-style: none;
-}
-
-input {
-  outline: none;
-}
-
-img {
-  width: 100%;
-}
-
-/* Utility */
-.flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  overflow: auto;
-  padding: 0 40px;
-}
-
-.card {
-  background-color: #fff;
-  color: $text-color;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  margin: 10px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 10px 30px;
-  cursor: pointer;
-  background: $primary;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-
-  &:hover {
-    transform: scale(0.98);
-  }
-
-  &-outline {
-    background-color: transparent;
-    border: 1px solid #fff;
-  }
-}
+@import 'reset.scss';
+@import 'utility.scss';
 
 /* Navbar */
 .navbar {
@@ -174,5 +82,45 @@ img {
       padding: 3px;
       font-size: 16px;
     }
+  }
+}
+
+/* Stats */
+.stats {
+  padding-top: 100px;
+
+  &-heading {
+    max-width: 500px;
+    margin: auto;
+  }
+
+  .grid {
+    h3 {
+      font-size: 35px;
+      font-weight: 500;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+}
+
+/* CLI */
+.cli {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    & > *:first-child {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 2;
+    }
+  }
+}
+
+/* Cloud */
+.cloud {
+  .grid {
+    grid-template-columns: 4fr 3fr;
   }
 }
